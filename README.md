@@ -18,7 +18,7 @@ using Javonet, go to Javonet Guides for Java developers (https://www.javonet.com
 # Requirements
 You need to copy the .NET assembly combit.ListLabel23.dll into the sample folder. Also, make sure to get the latest Javonet JAR package for Java developers and trial or commercial license key from Javonet. To get the sample working, add your licensing information for activating Javonet in combit.ListLabel23.JavonetActivation.InitializeJavonet. You can register for Javonet free trial and access download page by registering here (https://my.javonet.com/signup/?type=free).
 
-# How to Run The Sample Using Eclipse
+# How to Run the Sample Using Eclipse
 In this section you will find step by step guide how to run this sample. 
 
 1) **Clone this repository** - navigate with console window to the folder where you want to clone the repository and run the command below. Sample source code will be download to **combit** folder.

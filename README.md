@@ -15,5 +15,51 @@ combit List & Label .NET component (see also the .NET help at https://docu.combi
 the calls via Javonet. To learn more how to perform different types of calls from Java to .NET API 
 using Javonet, go to Javonet Guides for Java developers (https://www.javonet.com/java-devs/guides/).
 
-# Requirements:
+# Requirements
 You need to copy the .NET assembly combit.ListLabel23.dll into the sample folder. Also, make sure to get the latest Javonet JAR package for Java developers and trial or commercial license key from Javonet. To get the sample working, add your licensing information for activating Javonet in combit.ListLabel23.JavonetActivation.InitializeJavonet. You can register for Javonet free trial and access download page by registering here (https://my.javonet.com/signup/?type=free).
+
+# How to Run The Sample Using Eclipse
+In this section you will find step by step guide how to run this sample. 
+
+1) **Clone this repository** - navigate with console window to the folder where you want to clone the repository and run the command below. Sample source code will be download to **combit** folder.
+```
+git clone https://github.com/Javonet/combit.git
+```
+2) Open **Eclipse IDE**.
+> Because by default the source in the repository does not include Eclipse project files you need to create new workspace and import the project.
+3) **Create Eclipse Workspace** in the **combit** folder created by git.
+4) Right click on Project Explorer and choose **Import** next **General** > **Projects from Folder or Archive** and press **Next**.
+5) Press **Directory...** and point to the **DataBindingJavaSample** within the **combit** folder. Project should be automatically detected. Press **Finish** to complete.
+> Now your project is ready, you only need to add missing dependencies and set Javonet activation key.
+6) Register for free trial Javonet key [Signup for Javonet](https://my.javonet.com/signup?type=free).
+7) After registration is completed download **Javonet JAR** and copy to the Eclipse project.
+8) Right click **Javonet JAR** in Eclipse Project Explorer and choose **Build Path** > **Add to Build Path**
+9) **Set your email and Javonet license key** in **src/combit.ListLabel23/JavonetActivation.java** file:
+```java
+Javonet.activate(*****your-email-here*****, *****your-license-key-here*****, JavonetFramework.v45);
+```
+10) Register for **combit List & Label .NET** free trial [Register for combit](https://www.combit.net/en/download-trial/).
+11) Download and install **combit List & Label** components and copy **combit.ListLabel23.dll** to your Java project root folder.
+> combit.ListLabel23.dll can be found in List & Label install directory by default **C:\Program Files (x86)\combit\LL23\Redistributable Files\combit.ListLabel23.dll**
+12) Run the sample.
+
+# Screenshots
+<img alt="combit List & Label Java Sample Main Window" title="combit List & Label Java Sample Main Window" src="https://github.com/Javonet/combit/blob/master/Screenshots/MainWindow.png?raw=true" width="400px" />
+<img alt="combit List & Label Java Sample Designer" title="combit List & Label Java Sample Designer" src="https://github.com/Javonet/combit/blob/master/Screenshots/Designer.png?raw=true" width="400px" />
+<img alt="combit List & Label Java Sample Preview" title="combit List & Label Java Sample Preview" src="https://github.com/Javonet/combit/blob/master/Screenshots/Preview.png?raw=true" width="400px" />
+
+# Troubleshooting
+#### After importing the project to Eclipse each package in "src" is marked with red cross
+It means that your Eclipse build path references non existing JRE or you did not copied and included in build path the Javonet JAR file.
+
+#### When running the sample I get an exception "com.javonet.api.NException: Loading library failed. Library with name 'combit.ListLabel23.dll' was not found in current directory 'combit\DataBindingJavaSample' and in GAC."
+This means that the combit.ListLabel23.dll has not been placed in project root directory and cannot by resolved by Javonet.
+
+#### When running the smaple I press "Design" button I get exception "com.javonet.api.NException: The 'Microsoft.Jet.OLEDB.4.0' provider is not registered on the local machine."
+This exception means that List & Label components cannot find the OLEDB driver. It might mean that you did not install the List & Label components on your machine or you are using the x64 (64 bit) JRE. For this component to work you need to run the application using x86 (32 bit) JRE.
+
+#### When running the sample in the List & Label designer window the toolbar is displayed as standard menu instead of Ribbon menu
+Ribbon menu requires the ComCtl32.dll in version 6 to be loaded. Java by default when running the application using javaw.exe is loading version 5 which does not support ribbon framework. To get modern ribbon menu you need to run the sample using java.exe. To setup Eclipse for running the project with java.exe follow these steps:
+1) Right click your project > **Choose Run As** > Select **Run Configurations** > Go to **JRE** tab
+2) Select **Alternate JRE** and choose x86 JRE from the list
+3) New section **Java executable** will appear below. Select there the **Alternate** option and type **java** instead of **javaw**

@@ -54,6 +54,14 @@ import combit.ListLabel23.Events.*;
  * in the sample folder. Also you have to get the javonet-[?].jar and license key from Javonet. 
  * To get the sample working, add your licensing information for using Javonet in 
  * call to ListLabelActivation.setLicense(...) method in Form1.main(..).
+ * 
+ * This sample is using strongly-typed wrapper combit.ListLabel23 for Java which exposes
+ * part of the List&Label API. The source code of the wrapper is included in this repository,
+ * if you need to access any uncovered feature of combit List&Label, you can extend the wrapper
+ * and recompile the combit.ListLabel23.jar.
+ * 
+ * To re-compile the Jar after changes run the ANT build script:
+ * From Eclipse: Right Click "build_script.xml" > Run As Ant Build
  */
 
 public class Form1 extends JFrame implements ButtonPressCommandDelegate, AutoDefineFieldDelegate, ExecuteDbCommandDelegate {

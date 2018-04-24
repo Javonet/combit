@@ -5,6 +5,7 @@ import com.javonet.JavonetException;
 import com.javonet.api.NObject;
 
 public class OleDbCommand {
+	@SuppressWarnings("unused")
 	private NObject handle;
 	
 	public OleDbCommand(String command, OleDbConnection connection) {

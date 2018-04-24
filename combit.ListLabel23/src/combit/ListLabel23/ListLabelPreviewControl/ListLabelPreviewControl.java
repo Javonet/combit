@@ -10,7 +10,7 @@ import com.javonet.api.NEnum;
 import com.javonet.api.NObject;
 
 import System.Windows.Forms.DockStyle;
-import combit.ListLabel23.JavonetActivation;
+import combit.ListLabel23.ListLabelActivation;
 import combit.ListLabel23.LlPreviewControlCloseMode;
 
 public class ListLabelPreviewControl extends NControlJContainer {
@@ -18,7 +18,7 @@ public class ListLabelPreviewControl extends NControlJContainer {
 	private static final long serialVersionUID = -3935829477967255010L;
 	private static NObject handle;
 	
-	public ListLabelPreviewControl() throws JavonetException {
+	public ListLabelPreviewControl() throws Exception {
 		super(Javonet.New(ListLabelPreviewControl.class.getPackage().getName()));
 		handle=this.getUserControl();
 	}
@@ -57,7 +57,7 @@ public class ListLabelPreviewControl extends NControlJContainer {
 		}
 	}
 	
-	public void setBackColor(NObject color) {
+	public void setBackColor(Object color) {
 		try {
 			handle.set("BackColor", color);
 		} catch (JavonetException e) {
@@ -156,6 +156,6 @@ public class ListLabelPreviewControl extends NControlJContainer {
 	}
 	
 	static {
-		JavonetActivation.InitializeJavonet();
+		ListLabelActivation.initializeJavonet();
 	}
 }

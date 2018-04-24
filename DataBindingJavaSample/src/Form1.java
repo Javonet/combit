@@ -21,7 +21,6 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
 import java.util.EnumSet;
-import com.javonet.JavonetException;
 
 import Microsoft.Win32.Registry;
 import Microsoft.Win32.RegistryKey;
@@ -31,6 +30,7 @@ import System.Drawing.SystemColors;
 import System.Windows.Forms.DockStyle;
 
 import combit.ListLabel23.LL_User_Aborted_Exception;
+import combit.ListLabel23.ListLabelActivation;
 import combit.ListLabel23.ListLabelException;
 import combit.ListLabel23.LlButtonState;
 import combit.ListLabel23.LlPreviewControlCloseMode;
@@ -51,9 +51,9 @@ import combit.ListLabel23.Events.*;
  * - exporting into any kind of provided formats from List & Label
  * 
  * Requirements: You need to have copy the .NET assembly combit.ListLabel23.dll
- * in the sample folder. Also you have to get the javonet-[?].jar and
- * javonet.lic from Javonet. To get the sample working, add your licensing
- * information for using Javonet in combit.ListLabel23.JavonetActivation.InitializeJavonet.
+ * in the sample folder. Also you have to get the javonet-[?].jar and license key from Javonet. 
+ * To get the sample working, add your licensing information for using Javonet in 
+ * call to ListLabelActivation.setLicense(...) method in Form1.main(..).
  */
 
 public class Form1 extends JFrame implements ButtonPressCommandDelegate, AutoDefineFieldDelegate, ExecuteDbCommandDelegate {
@@ -68,7 +68,7 @@ public class Form1 extends JFrame implements ButtonPressCommandDelegate, AutoDef
 
 	private static final long serialVersionUID = 8903230729559541291L;
 
-	public Form1() throws JavonetException {
+	public Form1() throws Exception {
 		initializeComponents();
 		
 		// assign event for pressing the buttons in the preview control tool bar
@@ -96,7 +96,7 @@ public class Form1 extends JFrame implements ButtonPressCommandDelegate, AutoDef
 		}
 	}
 
-	private void initializeComponents() throws JavonetException {
+	private void initializeComponents() throws Exception {
 		//
 		// JFrame settings
 		//
@@ -431,12 +431,22 @@ public class Form1 extends JFrame implements ButtonPressCommandDelegate, AutoDef
 		}
 	}
 
-	public static void main(String[] args) throws JavonetException {
+	public static void main(String[] args) {
+		// Here you need to call ListLabelActivation.setLicense(...) and use your licensing information from Javonet
+		// e.g. ListLabelActivation.setLicense("<Your eMail address>", "<Your Javonet licensing key>");
+		// You can obtain your own Javonet free trial license key at: https://my.javonet.com/signup/?type=free
+		
+		//TODO: 1) Copy combit.ListLabel23.dll to project root folder
+		//TODO: 2) Copy javonet-1.5.jar or newer to project root folder
+		//TODO: 3) update your Javonet license details below
+		ListLabelActivation.setLicense("pladynski@sdncenter.pl", "Gq85-y8JQ-n2K3-z5R9-r2QN");
+		//ListLabelActivation.setLicense("your@mail.com", "your-license-key");
+		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
 					new Form1();
-				} catch (JavonetException e) {
+				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}

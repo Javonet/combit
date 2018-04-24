@@ -5,7 +5,7 @@ import com.javonet.JavonetException;
 import com.javonet.api.NObject;
 
 import System.Data.OleDb.OleDbCommand;
-import combit.ListLabel23.JavonetActivation;
+import combit.ListLabel23.ListLabelActivation;
 
 public class DbCommandSetDataProvider {
 	private NObject handle;
@@ -43,6 +43,6 @@ public class DbCommandSetDataProvider {
 		}
 	}
 	static {
-		JavonetActivation.InitializeJavonet();
+		ListLabelActivation.initializeJavonet();
 	}
 }

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="build_jar" name="Create Jar for combit.ListLabel23">
+    <!--ANT 1.7 is required                                        -->
+    <!--define folder properties-->
+    <property name="dir.buildfile" value="."/>
+    <property name="dir.workspace" value="${dir.buildfile}/.."/>
+    <property name="dir.jarfile" value="${dir.buildfile}/target"/>
+    <target name="build_jar">
+        <jar destfile="${dir.jarfile}/combit.ListLabel23.jar" filesetmanifest="merge" manifest="${dir.workspace}/combit.ListLabel23/manifest.mf">
+            <fileset dir="${dir.workspace}/combit.ListLabel23/bin"/>
+        </jar>
+    </target>
+</project>

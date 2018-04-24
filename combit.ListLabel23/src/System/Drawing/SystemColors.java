@@ -2,9 +2,12 @@ package System.Drawing;
 import com.javonet.Javonet;
 import com.javonet.JavonetException;
 import com.javonet.api.NObject;
+import com.javonet.api.NType;
 
 public class SystemColors {
-private static NObject handle;
+	@SuppressWarnings("unused")
+	private static NObject handle;
+	private static NType typeHandle;
 	
 	public SystemColors() {
 		try {
@@ -14,12 +17,20 @@ private static NObject handle;
 		}
 	}
 	
-	public static NObject getWindow() {
+	public static Color getWindow() {
 		try {
-			return Javonet.getType(SystemColors.class.getName()).get("Window");
+			return new Color(typeHandle.get("Window"));
 		} catch (JavonetException e) {
 			e.printStackTrace();
 			return null;
+		}
+	}
+	
+	static {
+		try {
+			typeHandle = Javonet.getType(SystemColors.class.getName());
+		} catch (JavonetException e) {
+			e.printStackTrace();
 		}
 	}
 }

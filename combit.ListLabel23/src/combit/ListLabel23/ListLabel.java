@@ -279,6 +279,11 @@ public class ListLabel {
 	}
 
 	static {
-		JavonetActivation.InitializeJavonet();
+		try {
+			ListLabelActivation.initializeJavonet();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

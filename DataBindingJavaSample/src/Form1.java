@@ -447,8 +447,7 @@ public class Form1 extends JFrame implements ButtonPressCommandDelegate, AutoDef
 		//TODO: 1) Copy combit.ListLabel23.dll to project root folder
 		//TODO: 2) Copy javonet-1.5.jar or newer to project root folder
 		//TODO: 3) update your Javonet license details below
-		ListLabelActivation.setLicense("pladynski@sdncenter.pl", "Gq85-y8JQ-n2K3-z5R9-r2QN");
-		//ListLabelActivation.setLicense("your@mail.com", "your-license-key");
+		ListLabelActivation.setLicense("your@mail.com", "your-license-key");
 		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {

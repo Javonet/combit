@@ -31,14 +31,15 @@ git clone https://github.com/Javonet/combit.git
 7) Register for free trial Javonet key [Signup for Javonet](https://my.javonet.com/signup?type=free).
 8) After registration is completed download **Javonet JAR** and copy to the Eclipse project.
 9) Right click **Javonet JAR** in Eclipse Project Explorer and choose **Build Path** > **Add to Build Path**
-10) **Set your email and Javonet license key** in **DataBindingJavaSample/src/Form1.java** file:
+10) Right click **combit.ListLabel23.jar** in Eclipse Project Explorer and choose **Build Path** > **Add to Build Path**
+11) **Set your email and Javonet license key** in **DataBindingJavaSample/src/Form1.java** file:
 ```java
 ListLabelActivation.setLicense(*****your-email-here*****, *****your-license-key-here*****);
 ```
-10) Register for **combit List & Label .NET** free trial [Register for combit](https://www.combit.net/en/download-trial/).
-11) Download and install **combit List & Label** components and copy **combit.ListLabel23.dll** to your Java project root folder.
+12) Register for **combit List & Label .NET** free trial [Register for combit](https://www.combit.net/en/download-trial/).
+13) Download and install **combit List & Label** components and copy **combit.ListLabel23.dll** to your Java project root folder.
 > combit.ListLabel23.dll can be found in List & Label install directory by default **C:\Program Files (x86)\combit\LL23\Redistributable Files\combit.ListLabel23.dll**
-12) Run the sample.
+14) Run the sample.
 
 # Screenshots
 <img alt="combit List & Label Java Sample Main Window" title="combit List & Label Java Sample Main Window" src="https://github.com/Javonet/combit/blob/master/Screenshots/MainWindow.png?raw=true" width="400px" />

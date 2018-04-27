@@ -46,6 +46,9 @@ Now you can run the sample.
 <img alt="combit List & Label Java Sample Designer" title="combit List & Label Java Sample Designer" src="https://github.com/Javonet/combit/blob/master/Screenshots/Designer.png?raw=true" width="400px" />
 <img alt="combit List & Label Java Sample Preview" title="combit List & Label Java Sample Preview" src="https://github.com/Javonet/combit/blob/master/Screenshots/Preview.png?raw=true" width="400px" />
 
+# Extending the wrapper
+Wrapper project **combit.listlabel23** source code with ready to use Jar build script is available in separate repository: https://github.com/Javonet/combit-listlabel23-java. You can clone this repository to cover additional features of List & Label component. Read the combit.listlabe23 project readme file for more details.
+
 # Troubleshooting
 #### After importing the project to Eclipse each package in "src" is marked with red cross
 It means that your Eclipse build path references non existing JRE or you did not copied and included in build path the Javonet JAR file.

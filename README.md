@@ -1,8 +1,8 @@
-# Javonet/combit
+ # Javonet/combit
 Sample projects showing how to use combit List &amp; Label .NET component from Java throught strongly typed wrapped based on Javonet.
 
 This example demonstrates the usage of the List & Label .NET component (https://www.combit.net/en/reporting-tool) in Java with 
-the third party component Javonet (https://www.javonet.com) and strongly-typed wrapper. Source code includes sample Swing desktop application using the component and compiled wrapper. Strongly-typed wrapper replicates List&Label 23 .NET API for Java, currently it exposes only the key operations required for this sample:
+the third party component Javonet (https://www.javonet.com) and strongly-typed wrapper. Source code includes sample Swing desktop application using the component and compiled wrapper. Strongly-typed wrapper replicates List & Label 23 .NET API for Java, currently it exposes only the key operations required for this sample:
  
 - using a List & Label .NET Dataprovider to connect to an Access database with OleDB and respond to an event of the Dataprovider
 - calling/opening the List & Label Designer; including real data preview

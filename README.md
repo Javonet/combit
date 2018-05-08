@@ -56,7 +56,7 @@ It means that your Eclipse build path references non existing JRE or you did not
 #### When running the sample I get an exception "com.javonet.api.NException: Loading library failed. Library with name 'combit.ListLabel23.dll' was not found in current directory 'combit\DataBindingJavaSample' and in GAC."
 This means that the combit.ListLabel23.dll has not been placed in project root directory and cannot by resolved by Javonet.
 
-#### When running the smaple I press "Design" button I get exception "com.javonet.api.NException: The 'Microsoft.Jet.OLEDB.4.0' provider is not registered on the local machine."
+#### When running the sample, I press "Design" button and get exception "com.javonet.api.NException: The 'Microsoft.Jet.OLEDB.4.0' provider is not registered on the local machine."
 This exception means that List & Label components cannot find the OLEDB driver. It might mean that you did not install the List & Label components on your machine or you are using the x64 (64 bit) JRE. For this component to work you need to run the application using x86 (32 bit) JRE.
 
 #### When running the sample in the List & Label designer window the toolbar is displayed as standard menu instead of Ribbon menu

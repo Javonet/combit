@@ -20,6 +20,8 @@ import javax.swing.JTabbedPane;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
+import com.javonet.Javonet;
+
 import java.util.EnumSet;
 
 import Microsoft.Win32.Registry;
@@ -29,17 +31,16 @@ import System.Data.OleDb.OleDbConnection;
 import System.Drawing.SystemColors;
 import System.Windows.Forms.DockStyle;
 
-import combit.ListLabel23.LL_User_Aborted_Exception;
-import combit.ListLabel23.ListLabelActivation;
-import combit.ListLabel23.ListLabelException;
-import combit.ListLabel23.LlButtonState;
-import combit.ListLabel23.LlPreviewControlCloseMode;
-import combit.ListLabel23.ListLabelPreviewControl.*;
-import combit.ListLabel23.LlProject;
-import combit.ListLabel23.DataProviders.DbCommandSetDataProvider.*;
-import combit.ListLabel23.DataProviders.DbCommandSetDataProvider.ExecuteDbCommandEventArgs.DbCommand;
-import combit.ListLabel23.Events.*;
-
+import combit.ListLabel24.LL_User_Aborted_Exception;
+import combit.ListLabel24.ListLabelActivation;
+import combit.ListLabel24.ListLabelException;
+import combit.ListLabel24.LlButtonState;
+import combit.ListLabel24.LlPreviewControlCloseMode;
+import combit.ListLabel24.ListLabelPreviewControl.*;
+import combit.ListLabel24.LlProject;
+import combit.ListLabel24.DataProviders.DbCommandSetDataProvider.*;
+import combit.ListLabel24.DataProviders.DbCommandSetDataProvider.ExecuteDbCommandEventArgs.DbCommand;
+import combit.ListLabel24.Events.*;
 /**
  * This example demonstrate the usage of the List & Label .NET component
  * (https://www.combit.net/en/reporting-tool) in Java with the third party
@@ -66,7 +67,7 @@ import combit.ListLabel23.Events.*;
 
 public class Form1 extends JFrame implements ButtonPressCommandDelegate, AutoDefineFieldDelegate, ExecuteDbCommandDelegate {
 
-	private combit.ListLabel23.ListLabel LL;
+	private combit.ListLabel24.ListLabel LL;
 	private ListLabelPreviewControl LLPreviewControl;
 	private String _databasePath;
 	private JButton print_Reader;
@@ -77,15 +78,23 @@ public class Form1 extends JFrame implements ButtonPressCommandDelegate, AutoDef
 	private static final long serialVersionUID = 8903230729559541291L;
 
 	public Form1() throws Exception {
+		
+        RegistryKey installKey = Registry.getCurrentUser().CreateSubKey("Software\\combit\\cmbtll");
+		if (installKey != null)
+			_databasePath = (String) installKey.GetValue("NWINDPath", "");
+		
+		String redistPath=(String)installKey.GetValue("LL24RedistDir", "");
+	
+		System.setProperty( "user.dir", redistPath );
+		
+		Javonet.getType("Directory").invoke("SetCurrentDirectory",redistPath);
+	
 		initializeComponents();
 		
 		// assign event for pressing the buttons in the preview control tool bar
 		ButtonPressCommand buttonPressCommand = new ButtonPressCommand(this); 
 		LLPreviewControl.attachButtonPressCommand(buttonPressCommand);
 
-		RegistryKey installKey = Registry.getCurrentUser().CreateSubKey("Software\\combit\\cmbtll");
-		if (installKey != null)
-			_databasePath = (String) installKey.GetValue("NWINDPath", "");
 	}
 
 	class Form1_windowAdapter extends java.awt.event.WindowAdapter{
@@ -281,16 +290,16 @@ public class Form1 extends JFrame implements ButtonPressCommandDelegate, AutoDef
 		//
 		// LL
 		//
-		this.LL = new combit.ListLabel23.ListLabel();
+		this.LL = new combit.ListLabel24.ListLabel();
 		this.LL.setAutoPrinterSettingsStream(null);
 		this.LL.setAutoProjectStream(null);
-		this.LL.setDataBindingMode(combit.ListLabel23.DataBindingMode.DelayLoad);
+		this.LL.setDataBindingMode(combit.ListLabel24.DataBindingMode.DelayLoad);
 		this.LL.setDrilldownAvailable(true);
 		this.LL.setEMFResolution(100);
 		this.LL.setLockNextChar(8288);
 		this.LL.setMaxRTFVersion(65280);
 		this.LL.setPhantomSpace(8203);
-		this.LL.setUnit(combit.ListLabel23.LlUnits.Millimeter_1_100);
+		this.LL.setUnit(combit.ListLabel24.LlUnits.Millimeter_1_100);
 		this.LL.setUseHardwareCopiesForLabels(false);
 		this.LL.setUseTableSchemaForDesignMode(false);
 		//
@@ -367,9 +376,9 @@ public class Form1 extends JFrame implements ButtonPressCommandDelegate, AutoDef
 	}
 	
 	private void ButtonDesign_Click() {
-		combit.ListLabel23.ListLabel workingLL = null;
+		combit.ListLabel24.ListLabel workingLL = null;
 		try {
-			workingLL = new combit.ListLabel23.ListLabel();
+			workingLL = new combit.ListLabel24.ListLabel();
 			
 			// attach event for firing for each assigned field with data binding
 			AutoDefineField autoDefineField = new AutoDefineField(this); 
@@ -402,9 +411,9 @@ public class Form1 extends JFrame implements ButtonPressCommandDelegate, AutoDef
 	}
 
 	private void ButtonPrint_Click() {
-		combit.ListLabel23.ListLabel workingLL = null;
+		combit.ListLabel24.ListLabel workingLL = null;
 		try {
-			workingLL = new combit.ListLabel23.ListLabel();
+			workingLL = new combit.ListLabel24.ListLabel();
 			
 			// attach the preview control
 			workingLL.setPreviewControl(this.LLPreviewControl);
@@ -448,7 +457,7 @@ public class Form1 extends JFrame implements ButtonPressCommandDelegate, AutoDef
 		//TODO: 2) Copy javonet-1.5.jar or newer to project root folder
 		//TODO: 3) update your Javonet license details below
 		ListLabelActivation.setLicense("your@mail.com", "your-license-key");
-		
+        
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {

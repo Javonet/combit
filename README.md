@@ -2,7 +2,7 @@
 Sample projects showing how to use combit List &amp; Label .NET component from Java throught strongly typed wrapped based on Javonet.
 
 This example demonstrates the usage of the List & Label .NET component (https://www.combit.net/en/reporting-tool) in Java with 
-the third party component Javonet (https://www.javonet.com) and strongly-typed wrapper. Source code includes sample Swing desktop application using the component and compiled wrapper. Strongly-typed wrapper replicates List & Label 24 .NET API for Java, currently it exposes only the key operations required for this sample:
+the third party component Javonet (https://www.javonet.com) and strongly-typed wrapper. Source code includes sample Swing desktop application using the component and compiled wrapper. Strongly-typed wrapper replicates List & Label 25 .NET API for Java, currently it exposes only the key operations required for this sample:
  
 - using a List & Label .NET Dataprovider to connect to an Access database with OleDB and respond to an event of the Dataprovider
 - calling/opening the List & Label Designer; including real data preview
@@ -12,7 +12,7 @@ the third party component Javonet (https://www.javonet.com) and strongly-typed w
 You can further extend this wrapper to expose the strongly typed methods with signatures matching the combit List & Label .NET component (see also the .NET help at https://docu.combit.net/en) and forwarding the calls via Javonet. To learn more how to perform different types of calls from Java to .NET API using Javonet, go to Javonet Guides for Java developers (https://www.javonet.com/java-devs/guides/).
 
 # Requirements
-You need to copy the .NET assembly combit.ListLabel24.dll into the sample folder. Also, make sure to get the latest Javonet Jar package for Java developers and trial or commercial license key from Javonet. To get the sample working, add your licensing information for activating Javonet in [DataBindingJavaSample/src/Form1.java in main method]. You can register for Javonet free trial and access download page by registering here (https://my.javonet.com/signup/?type=free).
+You need to copy the .NET assembly combit.ListLabel25.dll into the sample folder. Also, make sure to get the latest Javonet Jar package for Java developers and trial or commercial license key from Javonet. To get the sample working, add your licensing information for activating Javonet in [DataBindingJavaSample/src/Form1.java in main method]. You can register for Javonet free trial and access download page by registering here (https://my.javonet.com/signup/?type=free).
 
 # How to Run the Sample Using Eclipse
 In this section you will find step by step guide how to run this sample. 

@@ -29,16 +29,16 @@ import System.Data.OleDb.OleDbConnection;
 import System.Drawing.SystemColors;
 import System.Windows.Forms.DockStyle;
 
-import combit.ListLabel24.LL_User_Aborted_Exception;
-import combit.ListLabel24.ListLabelActivation;
-import combit.ListLabel24.ListLabelException;
-import combit.ListLabel24.LlButtonState;
-import combit.ListLabel24.LlPreviewControlCloseMode;
-import combit.ListLabel24.ListLabelPreviewControl.*;
-import combit.ListLabel24.LlProject;
-import combit.ListLabel24.DataProviders.DbCommandSetDataProvider.*;
-import combit.ListLabel24.DataProviders.DbCommandSetDataProvider.ExecuteDbCommandEventArgs.DbCommand;
-import combit.ListLabel24.Events.*;
+import combit.ListLabel25.LL_User_Aborted_Exception;
+import combit.ListLabel25.ListLabelActivation;
+import combit.ListLabel25.ListLabelException;
+import combit.ListLabel25.LlButtonState;
+import combit.ListLabel25.LlPreviewControlCloseMode;
+import combit.ListLabel25.ListLabelPreviewControl.*;
+import combit.ListLabel25.LlProject;
+import combit.ListLabel25.DataProviders.DbCommandSetDataProvider.*;
+import combit.ListLabel25.DataProviders.DbCommandSetDataProvider.ExecuteDbCommandEventArgs.DbCommand;
+import combit.ListLabel25.Events.*;
 /**
  * This example demonstrate the usage of the List & Label .NET component
  * (https://www.combit.net/en/reporting-tool) in Java with the third party
@@ -65,7 +65,7 @@ import combit.ListLabel24.Events.*;
 
 public class Form1 extends JFrame implements ButtonPressCommandDelegate, AutoDefineFieldDelegate, ExecuteDbCommandDelegate {
 
-	private combit.ListLabel24.ListLabel LL;
+	private combit.ListLabel25.ListLabel LL;
 	private ListLabelPreviewControl LLPreviewControl;
 	private String _databasePath;
 	private JButton print_Reader;
@@ -281,16 +281,16 @@ public class Form1 extends JFrame implements ButtonPressCommandDelegate, AutoDef
 		//
 		// LL
 		//
-		this.LL = new combit.ListLabel24.ListLabel();
+		this.LL = new combit.ListLabel25.ListLabel();
 		this.LL.setAutoPrinterSettingsStream(null);
 		this.LL.setAutoProjectStream(null);
-		this.LL.setDataBindingMode(combit.ListLabel24.DataBindingMode.DelayLoad);
+		this.LL.setDataBindingMode(combit.ListLabel25.DataBindingMode.DelayLoad);
 		this.LL.setDrilldownAvailable(true);
 		this.LL.setEMFResolution(100);
 		this.LL.setLockNextChar(8288);
 		this.LL.setMaxRTFVersion(65280);
 		this.LL.setPhantomSpace(8203);
-		this.LL.setUnit(combit.ListLabel24.LlUnits.Millimeter_1_100);
+		this.LL.setUnit(combit.ListLabel25.LlUnits.Millimeter_1_100);
 		this.LL.setUseHardwareCopiesForLabels(false);
 		this.LL.setUseTableSchemaForDesignMode(false);
 		//
@@ -367,9 +367,9 @@ public class Form1 extends JFrame implements ButtonPressCommandDelegate, AutoDef
 	}
 	
 	private void ButtonDesign_Click() {
-		combit.ListLabel24.ListLabel workingLL = null;
+		combit.ListLabel25.ListLabel workingLL = null;
 		try {
-			workingLL = new combit.ListLabel24.ListLabel();
+			workingLL = new combit.ListLabel25.ListLabel();
 			
 			// attach event for firing for each assigned field with data binding
 			AutoDefineField autoDefineField = new AutoDefineField(this); 
@@ -402,9 +402,9 @@ public class Form1 extends JFrame implements ButtonPressCommandDelegate, AutoDef
 	}
 
 	private void ButtonPrint_Click() {
-		combit.ListLabel24.ListLabel workingLL = null;
+		combit.ListLabel25.ListLabel workingLL = null;
 		try {
-			workingLL = new combit.ListLabel24.ListLabel();
+			workingLL = new combit.ListLabel25.ListLabel();
 			
 			// attach the preview control
 			workingLL.setPreviewControl(this.LLPreviewControl);

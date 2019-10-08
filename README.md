@@ -30,14 +30,14 @@ git clone https://github.com/Javonet/combit.git
 6) Register for free trial Javonet key [Signup for Javonet](https://my.javonet.com/signup?type=free).
 7) After registration is completed download **Javonet Jar** and copy to the Eclipse project.
 8) Right click **Javonet Jar** in Eclipse Project Explorer and choose **Build Path** > **Add to Build Path**
-9) Right click **combit.ListLabel24.jar** in Eclipse Project Explorer and choose **Build Path** > **Add to Build Path**
+9) Right click **combit.ListLabel25.jar** in Eclipse Project Explorer and choose **Build Path** > **Add to Build Path**
 10) **Set your email and Javonet license key** in **DataBindingJavaSample/src/Form1.java** file:
 ```java
 ListLabelActivation.setLicense(*****your-email-here*****, *****your-license-key-here*****);
 ```
 11) Register for **combit List & Label .NET** free trial [Register for combit](https://www.combit.net/en/download-trial/).
-12) Download and install **combit List & Label** components and copy **combit.ListLabel24.dll** to your Java project root folder.
-> combit.ListLabel24.dll can be found in List & Label install directory by default **C:\Program Files (x86)\combit\LL24\Redistributable Files\combit.ListLabel24.dll**
+12) Download and install **combit List & Label** components and copy **combit.ListLabel25.dll** to your Java project root folder.
+> combit.ListLabel25.dll can be found in List & Label install directory by default **C:\Program Files (x86)\combit\LL25\Redistributable Files\combit.ListLabel25.dll**
 
 Now you can run the sample.
 
@@ -47,13 +47,13 @@ Now you can run the sample.
 <img alt="combit List & Label Java Sample Preview" title="combit List & Label Java Sample Preview" src="https://github.com/Javonet/combit/blob/master/Screenshots/Preview.png?raw=true" width="400px" />
 
 # Extending the wrapper
-Wrapper project **combit.ListLabel24** source code with ready to use Jar build script is in Wrapper folder
+Wrapper project **combit.5** source code with ready to use Jar build script is in Wrapper folder
 # Troubleshooting
 #### After importing the project to Eclipse each package in "src" is marked with red cross
 It means that your Eclipse build path references non existing JRE or you did not copied and included in build path the Javonet JAR file.
 
-#### When running the sample I get an exception "com.javonet.api.NException: Loading library failed. Library with name 'combit.ListLabel24.dll' was not found in current directory 'combit\DataBindingJavaSample' and in GAC."
-This means that the combit.ListLabel24.dll has not been placed in project root directory and cannot by resolved by Javonet.
+#### When running the sample I get an exception "com.javonet.api.NException: Loading library failed. Library with name 'combit.ListLabel25.dll' was not found in current directory 'combit\DataBindingJavaSample' and in GAC."
+This means that the combit.ListLabel25.dll has not been placed in project root directory and cannot by resolved by Javonet.
 
 #### When running the sample, I press "Design" button and get exception "com.javonet.api.NException: The 'Microsoft.Jet.OLEDB.4.0' provider is not registered on the local machine."
 This exception means that List & Label components cannot find the OLEDB driver. It might mean that you did not install the List & Label components on your machine or you are using the x64 (64 bit) JRE. For this component to work you need to run the application using x86 (32 bit) JRE.

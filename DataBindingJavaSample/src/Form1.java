@@ -49,15 +49,15 @@ import combit.ListLabel25.Events.*;
  * - printing into the List & Label preview control on the dialog and respond to an button click event of the preview control
  * - exporting into any kind of provided formats from List & Label
  * 
- * Requirements: You need to have copy the .NET assembly combit.ListLabel24.dll
+ * Requirements: You need to have copy the .NET assembly combit.ListLabel25.dll
  * in the sample folder. Also you have to get the javonet-[?].jar and license key from Javonet. 
  * To get the sample working, add your licensing information for using Javonet in 
  * call to ListLabelActivation.setLicense(...) method in Form1.main(..).
  * 
- * This sample is using strongly-typed wrapper combit.ListLabel24 for Java which exposes
+ * This sample is using strongly-typed wrapper combit.ListLabel25 for Java which exposes
  * part of the List&Label API. The source code of the wrapper is included in this repository,
  * if you need to access any uncovered feature of combit List&Label, you can extend the wrapper
- * and recompile the combit.ListLabel24.jar.
+ * and recompile the combit.ListLabel25.jar.
  * 
  * To re-compile the Jar after changes run the ANT build script:
  * From Eclipse: Right Click "build_script.xml" > Run As Ant Build
@@ -444,7 +444,7 @@ public class Form1 extends JFrame implements ButtonPressCommandDelegate, AutoDef
 		// e.g. ListLabelActivation.setLicense("<Your eMail address>", "<Your Javonet licensing key>");
 		// You can obtain your own Javonet free trial license key at: https://my.javonet.com/signup/?type=free
 		
-		//TODO: 1) Copy combit.ListLabel24.dll to project root folder
+		//TODO: 1) Copy combit.ListLabel25.dll to project root folder
 		//TODO: 2) Copy javonet-1.5.jar or newer to project root folder
 		//TODO: 3) update your Javonet license details below
 		ListLabelActivation.setLicense("your@mail.com", "your-license-key");
